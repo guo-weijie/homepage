@@ -126,7 +126,7 @@
     }
 
     // 获取 bing 每日图片
-    fetch('http://localhost:3000/user/loginBg').then(res => res.json()).then(res => {
+    fetch('https://admin-api.keep-silent.com/user/loginBg').then(res => res.json()).then(res => {
       const { code, data, msg } = res
       if (code === 200 && data) {
         img.src = data
