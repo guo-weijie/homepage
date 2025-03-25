@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghosie 导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .box a {
+      display: inline-block;
+      border-radius: 10px;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .box a::after {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      line-height: 1;
+      font-size: 1.5em;
+    }
+
+    .box a:hover {
+      background-color: #f5f5f5;
+      transform: scale(1.1);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    a.blog::after {
+      content: '博客';
+    }
+
+    a.account::after {
+      content: '记账';
+    }
+
+    a.ztree::after {
+      content: 'ztree';
+    }
+
+    a.sgui::after {
+      content: 'SG-UI';
+    }
+
+    @media screen and (min-width: 768px) {
+      .box {
+        flex-wrap: nowrap;
+      }
+
+      .box a {
+        width: 20%;
+        padding-top: 20%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .box {
+        flex-wrap: wrap;
+      }
+
+      .box a {
+        width: 45%;
+        padding-top: 45%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <a href="https://blog.keep-silent.com" class="blog"></a>
+    <a href="https://admin.keep-silent.com" class="account"></a>
+    <a href="https://docs.caacle.com/zTree_v3/api/API_cn.html" class="ztree"></a>
+    <a href="https://sg-ui.keep-silent.com" class="sgui"></a>
+  </div>
+
+  <script src="./js/color-thief.umd.js"></script>
+
+  <script>
+    /**
+     * getColor() 获取主色
+     * getPalette() 获取调色板
+     */
+    const colorThief = new ColorThief();
+    const img = new Image();
+    // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+      const colors = colorThief.getColor(img);
+      console.log(colors, 'colors');
+      const box = document.querySelector('.box')
+      box.style.backgroundImage = `url(${img.src})`
+      const cards = box.querySelectorAll('a')
+      cards.forEach(card => {
+        // 设置背景色和磨砂玻璃效果
+        card.style.backgroundColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`
+        card.style.opacity = 0.5
+        // 字体颜色动态生成高对比度颜色
+        card.style.color = `rgb(${colors[0] + 200}, ${colors[1] + 200}, ${colors[2] + 200})`
+      })
+    }
+
+    // 获取 bing 每日图片
+    fetch('http://localhost:3000/user/loginBg').then(res => res.json()).then(res => {
+      const { code, data, msg } = res
+      if (code === 200 && data) {
+        img.src = data
+      } else {
+        img.src = './img/bg.jpg'
+      }
+    })
+
+    /**
+     * 判断用户是PC端还是移动端
+     */
+    function isMobile() {
+      var userAgentInfo = navigator.userAgent;
+      var Agents = ["Android", "iPhone", "iPad"];
+      return Agents.some(item => userAgentInfo.indexOf(item) > 0)
+    }
+    const account = document.querySelector('.account');
+    if (isMobile()) {
+      account.href = 'https://m.keep-silent.com'
+    } else {
+      account.href = 'https://admin.keep-silent.com'
+    }
+  </script>
+</body>
+
+</html>
