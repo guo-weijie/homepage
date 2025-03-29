@@ -49,6 +49,9 @@
       transform: scale(1.1);
       transition: all 0.3s;
       cursor: pointer;
+      font-weight: bold;
+      color: #fff !important;
+      opacity: 0.8 !important;
     }
 
     a.blog::after {
@@ -99,18 +102,10 @@
     <a href="https://sg-ui.keep-silent.com" class="sgui"></a>
   </div>
 
-  <script src="./js/color-thief.umd.js"></script>
+  <!-- <script src="./js/color-thief.umd.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
   <script>
-    // 获取 bing 每日图片
-    fetch('https://admin-api.keep-silent.com/user/loginBg').then(res => res.json()).then(res => {
-      const { code, data, msg } = res
-      if (code === 200 && data) {
-        img.src = data
-      } else {
-        img.src = './img/bg.jpg'
-      }
-    })
     /**
      * getColor() 获取主色
      * getPalette() 获取调色板
@@ -119,6 +114,7 @@
     const img = new Image();
     // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
     img.crossOrigin = 'anonymous';
+    img.src = 'https://bing.biturl.top/?resolution=1920&format=image&mkt=zh-CN';
     img.onload = function () {
       const box = document.querySelector('.box')
       box.style.backgroundImage = `url(${img.src})`
