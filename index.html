@@ -24,6 +24,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
+      gap: 20px;
     }
 
     .box a {
@@ -70,9 +71,17 @@
       content: 'SG-UI';
     }
 
+    a.simcard1::after {
+      content: '流量卡办理1';
+    }
+
+    a.simcard2::after {
+      content: '流量卡办理2';
+    }
+
     @media screen and (min-width: 768px) {
       .box {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
       }
 
       .box a {
@@ -87,8 +96,8 @@
       }
 
       .box a {
-        width: 45%;
-        padding-top: 45%;
+        width: 40%;
+        padding-top: 40%;
       }
     }
   </style>
@@ -100,6 +109,8 @@
     <a href="https://admin.keep-silent.com" class="account"></a>
     <a href="https://docs.caacle.com/zTree_v3/api/API_cn.html" class="ztree"></a>
     <a href="https://sg-ui.keep-silent.com" class="sgui"></a>
+    <a href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765" class="simcard1"></a>
+    <a href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369" class="simcard2"></a>
   </div>
 
   <!-- <script src="./js/color-thief.umd.js"></script> -->
