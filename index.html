@@ -1,177 +1,200 @@
 <!DOCTYPE html>
 <html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ghosie 导航页，提供常用服务入口，包括博客、记账系统、zTree 文档、SG-UI 演示文档等。"
+    />
+    <meta
+      name="keywords"
+      content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理,移动流量卡,联通流量卡,电信流量卡,广电流量卡"
+    />
+    <meta property="og:title" content="Ghosie 导航页" />
+    <meta property="og:description" content="常用工具与服务导航页面，支持响应式布局与动态背景配色。" />
+    <meta property="og:url" content="https://keep-silent.com" />
+    <title>Ghosie 导航</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ghosie 导航页，提供常用服务入口，包括博客、记账系统、zTree 文档、SG-UI 演示文档等。">
-  <meta name="keywords" content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理,移动流量卡,联通流量卡,电信流量卡,广电流量卡">
-  <meta property="og:title" content="Ghosie 导航页">
-  <meta property="og:description" content="常用工具与服务导航页面，支持响应式布局与动态背景配色。">
-  <meta property="og:url" content="https://keep-silent.com">
-  <title>Ghosie 导航</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
+      body {
+        width: 100%;
+        height: 100vh;
+      }
 
-    body {
-      width: 100%;
-      height: 100vh;
-    }
-
-    .box {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .box a {
-      display: inline-block;
-      border-radius: 10px;
-      text-decoration: none;
-      position: relative;
-      transition: all 0.3s;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .box a::after {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      line-height: 1;
-      font-size: 1.5em;
-    }
-
-    .box a:hover {
-      background-color: #f5f5f5;
-      transform: scale(1.1);
-      cursor: pointer;
-      font-weight: bold;
-      color: #fff !important;
-      opacity: 0.8 !important;
-    }
-
-    a.blog::after {
-      content: '博客';
-    }
-
-    a.account::after {
-      content: '记账';
-    }
-
-    a.ztree::after {
-      content: 'ztree';
-    }
-
-    a.sgui::after {
-      content: 'SG-UI';
-    }
-
-    a.simcard1::after {
-      content: '流量卡办理1';
-    }
-
-    a.simcard2::after {
-      content: '流量卡办理2';
-    }
-
-    @media screen and (min-width: 768px) {
       .box {
-        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
       }
 
       .box a {
-        width: 20%;
-        padding-top: 20%;
+        display: inline-block;
+        border-radius: 10px;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s;
+        height: 0;
+        overflow: hidden;
       }
-    }
 
-    @media screen and (max-width: 768px) {
-      .box {
-        flex-wrap: wrap;
+      .box a::after {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        line-height: 1;
+        font-size: 1.5em;
       }
 
-      .box a {
-        width: 40%;
-        padding-top: 40%;
+      .box a:hover {
+        background-color: #f5f5f5;
+        transform: scale(1.1);
+        cursor: pointer;
+        font-weight: bold;
+        color: #fff !important;
+        opacity: 0.8 !important;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <h1 style="position:absolute; left:-9999px;">Ghosie 导航页 - 博客 · 记账 · UI组件 · 流量卡</h1>
+      a.blog::after {
+        content: "博客";
+      }
 
-  <nav class="box">
-    <a href="https://blog.keep-silent.com" target="_blank" class="blog" title="访问博客">博客</a>
-    <a href="https://admin.keep-silent.com" target="_blank" class="account" title="访问记账系统">记账</a>
-    <a href="https://docs.caacle.com/zTree_v3/api/API_cn.html" target="_blank" class="ztree"
-      title="查看 zTree API 文档">zTree API 文档</a>
-    <a href="https://sg-ui.keep-silent.com" target="_blank" class="sgui" title="访问 SG-UI 组件库">SG-UI 组件库</a>
-    <a href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765" target="_blank" class="simcard1"
-      title="办理流量卡 1">办理流量卡1</a>
-    <a href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369" target="_blank" class="simcard2"
-      title="办理流量卡 2">办理流量卡2</a>
-  </nav>
+      a.account::after {
+        content: "记账";
+      }
 
-  <!-- <script src="./js/color-thief.umd.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+      a.ztree::after {
+        content: "ztree";
+      }
 
-  <script>
-    /**
-     * 判断用户是PC端还是移动端
-     */
-    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-    const account = document.querySelector('.account');
-    if (isMobile) {
-      account.href = 'https://m.keep-silent.com'
-    } else {
-      account.href = 'https://admin.keep-silent.com'
-    }
+      a.sgui::after {
+        content: "SG-UI";
+      }
 
+      a.simcard1::after {
+        content: "流量卡办理1";
+      }
 
-    /**
-     * getColor() 获取主色
-     * getPalette() 获取调色板
-     */
-    const colorThief = new ColorThief();
-    const img = new Image();
-    // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
-    img.crossOrigin = 'anonymous';
-    img.src = 'https://bing.biturl.top/?resolution=1920&format=image&mkt=zh-CN';
+      a.simcard2::after {
+        content: "流量卡办理2";
+      }
 
-    const box = document.querySelector('.box');
-    const cards = box.querySelectorAll('a');
+      a.tp::after {
+        content: "拓扑图";
+      }
 
-    img.onload = function () {
-      box.style.backgroundImage = `url(${img.src})`
-      const colors = colorThief.getColor(img);
-      const bgColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`
-      const fontColor = `rgb(${colors[0] + 200}, ${colors[1] + 200}, ${colors[2] + 200})`
-      cards.forEach(card => {
-        // 设置背景色和磨砂玻璃效果
-        card.style.backgroundColor = bgColor
-        card.style.opacity = 0.5
-        // 字体颜色动态生成高对比度颜色
-        card.style.color = fontColor
-      })
-    }
+      @media screen and (min-width: 768px) {
+        .box {
+          flex-wrap: wrap;
+        }
 
-    img.onerror = function () {
-      img.src = './images/bg.jpg'
-    }
-  </script>
-</body>
+        .box a {
+          width: 20%;
+          padding-top: 20%;
+        }
+      }
 
+      @media screen and (max-width: 768px) {
+        .box {
+          flex-wrap: wrap;
+        }
+
+        .box a {
+          width: 40%;
+          padding-top: 40%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 style="position: absolute; left: -9999px">Ghosie 导航页 - 博客 · 记账 · UI组件 · 流量卡</h1>
+
+    <nav class="box">
+      <a href="https://blog.keep-silent.com" target="_blank" class="blog" title="访问博客">博客</a>
+      <a href="https://admin.keep-silent.com" target="_blank" class="account" title="访问记账系统">记账</a>
+      <a
+        href="https://docs.caacle.com/zTree_v3/api/API_cn.html"
+        target="_blank"
+        class="ztree"
+        title="查看 zTree API 文档"
+        >zTree API 文档</a
+      >
+      <a href="https://sg-ui.keep-silent.com" target="_blank" class="sgui" title="访问 SG-UI 组件库">SG-UI 组件库</a>
+      <a
+        href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765"
+        target="_blank"
+        class="simcard1"
+        title="办理流量卡 1"
+        >办理流量卡1</a
+      >
+      <a
+        href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369"
+        target="_blank"
+        class="simcard2"
+        title="办理流量卡 2"
+        >办理流量卡2</a
+      >
+      <a href="https://tp.keep-silent.com" target="_blank" class="tp" title="访问拓扑图">拓扑图</a>
+    </nav>
+
+    <!-- <script src="./js/color-thief.umd.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+    <script>
+      /**
+       * 判断用户是PC端还是移动端
+       */
+      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+      const account = document.querySelector(".account");
+      if (isMobile) {
+        account.href = "https://m.keep-silent.com";
+      } else {
+        account.href = "https://admin.keep-silent.com";
+      }
+
+      /**
+       * getColor() 获取主色
+       * getPalette() 获取调色板
+       */
+      const colorThief = new ColorThief();
+      const img = new Image();
+      // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
+      img.crossOrigin = "anonymous";
+      img.src = "https://bing.biturl.top/?resolution=1920&format=image&mkt=zh-CN";
+
+      const box = document.querySelector(".box");
+      const cards = box.querySelectorAll("a");
+
+      img.onload = function () {
+        box.style.backgroundImage = `url(${img.src})`;
+        const colors = colorThief.getColor(img);
+        const bgColor = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+        const fontColor = `rgb(${colors[0] + 200}, ${colors[1] + 200}, ${colors[2] + 200})`;
+        cards.forEach((card) => {
+          // 设置背景色和磨砂玻璃效果
+          card.style.backgroundColor = bgColor;
+          card.style.opacity = 0.5;
+          // 字体颜色动态生成高对比度颜色
+          card.style.color = fontColor;
+        });
+      };
+
+      img.onerror = function () {
+        img.src = "./images/bg.jpg";
+      };
+    </script>
+  </body>
 </html>
