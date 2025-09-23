@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ghosie 导航页，提供常用服务入口，包括博客、记账系统、zTree 文档、SG-UI 演示文档等。"
+      content="Ghosie 导航页，提供常用服务入口，包括博客、记账系统、zTree 文档、SG-UI 演示文档、工具箱等。"
     />
     <meta
       name="keywords"
-      content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理,移动流量卡,联通流量卡,电信流量卡,广电流量卡"
+      content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理,移动流量卡,联通流量卡,电信流量卡,广电流量卡,图片转base64,颜色转换"
     />
     <meta property="og:title" content="Ghosie 导航页" />
     <meta property="og:description" content="常用工具与服务导航页面，支持响应式布局与动态背景配色。" />
@@ -95,6 +95,10 @@
         content: "拓扑图";
       }
 
+      a.tools::after {
+        content: "工具箱";
+      }
+
       @media screen and (min-width: 768px) {
         .box {
           flex-wrap: wrap;
@@ -120,7 +124,7 @@
   </head>
 
   <body>
-    <h1 style="position: absolute; left: -9999px">Ghosie 导航页 - 博客 · 记账 · UI组件 · 流量卡</h1>
+    <h1 style="position: absolute; left: -9999px">Ghosie 导航页 - 博客 · 记账 · UI组件 · 流量卡 · 工具箱</h1>
 
     <nav class="box">
       <a href="https://blog.keep-silent.com" target="_blank" class="blog" title="访问博客">博客</a>
@@ -148,6 +152,7 @@
         >办理流量卡2</a
       >
       <a href="https://tp.keep-silent.com" target="_blank" class="tp" title="访问拓扑图">拓扑图</a>
+      <a href="https://tools.keep-silent.com" target="_blank" class="tools" title="访问工具箱">工具箱</a>
     </nav>
 
     <!-- <script src="./js/color-thief.umd.js"></script> -->
@@ -173,7 +178,7 @@
       const img = new Image();
       // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
       img.crossOrigin = "anonymous";
-      img.src = "https://bing.biturl.top/?resolution=1920&format=image&mkt=zh-CN";
+      img.src = "https://admin-api.keep-silent.com/user/loginBg";
 
       const box = document.querySelector(".box");
       const cards = box.querySelectorAll("a");
