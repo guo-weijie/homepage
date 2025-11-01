@@ -178,7 +178,13 @@
       const img = new Image();
       // 设置该属性表明必须使用 CORS 完成相关图像的抓取。启用 CORS 的图像可以在 <canvas> 元素中重复使用，而不会被标记为“污染（tainted）”。
       img.crossOrigin = "anonymous";
-      img.src = "https://admin-api.keep-silent.com/user/loginBg";
+
+      fetch("https://admin-api.keep-silent.com/user/loginBg", { responseType: "blob" })
+        .then((res) => res.blob())
+        .then((blob) => {
+          const url = URL.createObjectURL(blob);
+          img.src = url;
+        });
 
       const box = document.querySelector(".box");
       const cards = box.querySelectorAll("a");
