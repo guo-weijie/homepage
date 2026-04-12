@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ghosie 导航页，提供博客、记账系统、zTree 文档、SG-UI 组件库、流量卡办理、工具箱等常用服务入口。" />
+    <meta
+      name="description"
+      content="Ghosie 导航页，提供博客、记账系统、zTree 文档、SG-UI 组件库、流量卡办理、工具箱等常用服务入口。"
+    />
     <meta name="keywords" content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理, 开发者工具" />
     <meta property="og:title" content="Ghosie 导航页" />
-    <meta property="og:description" content="现代化响应式导航页面，连接技术与创意的桥梁" />
+    <meta property="og:description" content="keep silent 官方网站，现代化响应式导航页面，连接技术与创意的桥梁" />
     <meta property="og:url" content="https://keep-silent.com" />
     <title>Ghosie 导航</title>
     <style>
@@ -22,10 +25,14 @@
         --transition: 0.4s;
       }
 
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
       body {
-        font-family: 'Segoe UI', system-ui, sans-serif;
+        font-family: "Segoe UI", system-ui, sans-serif;
         background: var(--bg-dark);
         color: var(--text-main);
         min-height: 100vh;
@@ -34,7 +41,8 @@
       }
 
       /* 粒子背景 */
-      #particles-js, #fallback-particles {
+      #particles-js,
+      #fallback-particles {
         position: fixed;
         width: 100%;
         height: 100%;
@@ -104,13 +112,27 @@
       }
 
       /* 卡片动画延迟 */
-      .nav-card:nth-child(1) { animation-delay: 0.1s; }
-      .nav-card:nth-child(2) { animation-delay: 0.2s; }
-      .nav-card:nth-child(3) { animation-delay: 0.3s; }
-      .nav-card:nth-child(4) { animation-delay: 0.4s; }
-      .nav-card:nth-child(5) { animation-delay: 0.5s; }
-      .nav-card:nth-child(6) { animation-delay: 0.6s; }
-      .nav-card:nth-child(7) { animation-delay: 0.7s; }
+      .nav-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .nav-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .nav-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .nav-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .nav-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .nav-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .nav-card:nth-child(7) {
+        animation-delay: 0.7s;
+      }
 
       /* 卡片悬停效果 */
       .nav-card:hover {
@@ -151,7 +173,7 @@
 
       /* 发光边框 */
       .nav-card::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: -2px;
         background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
@@ -162,51 +184,110 @@
         animation: glowRotate 3s linear infinite;
       }
 
-      .nav-card:hover::before { opacity: 1; }
+      .nav-card:hover::before {
+        opacity: 1;
+      }
 
       /* 动画定义 */
       @keyframes fadeSlide {
-        from { opacity: 0; transform: translateY(-30px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
       @keyframes glowRotate {
-        0%, 100% { filter: hue-rotate(0deg); }
-        50% { filter: hue-rotate(180deg); }
+        0%,
+        100% {
+          filter: hue-rotate(0deg);
+        }
+        50% {
+          filter: hue-rotate(180deg);
+        }
       }
 
       /* 响应式设计 */
       @media (min-width: 1400px) {
-        .nav-grid { grid-template-columns: repeat(4, 1fr); }
-        .container { padding: 3rem; }
+        .nav-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .container {
+          padding: 3rem;
+        }
       }
 
       @media (min-width: 1024px) and (max-width: 1399px) {
-        .nav-grid { grid-template-columns: repeat(3, 1fr); }
+        .nav-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
 
       @media (min-width: 768px) and (max-width: 1023px) {
-        .nav-grid { grid-template-columns: repeat(2, 1fr); }
-        .container { padding: 1.5rem; }
-        .header h1 { font-size: 2.8rem; }
+        .nav-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .container {
+          padding: 1.5rem;
+        }
+        .header h1 {
+          font-size: 2.8rem;
+        }
       }
 
       @media (max-width: 767px) {
-        .nav-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-        .container { padding: 1rem; }
-        .header { margin: 1rem 0 2rem; }
-        .header h1 { font-size: 2rem; letter-spacing: 1px; }
-        .nav-card { padding: 1.5rem; min-height: 160px; }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .card-title { font-size: 1.3rem; }
-        .card-desc { font-size: 0.85rem; max-width: 100%; }
+        .nav-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .container {
+          padding: 1rem;
+        }
+        .header {
+          margin: 1rem 0 2rem;
+        }
+        .header h1 {
+          font-size: 2rem;
+          letter-spacing: 1px;
+        }
+        .nav-card {
+          padding: 1.5rem;
+          min-height: 160px;
+        }
+        .card-icon {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        .card-title {
+          font-size: 1.3rem;
+        }
+        .card-desc {
+          font-size: 0.85rem;
+          max-width: 100%;
+        }
       }
 
       /* 加载动画 */
@@ -233,10 +314,19 @@
         animation: spin 1s linear infinite;
       }
 
-      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
       /* 备用粒子动画 */
-      .fallback-particles { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+      .fallback-particles {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+      }
 
       .particle {
         position: absolute;
@@ -247,10 +337,20 @@
       }
 
       @keyframes float {
-        0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-        10% { opacity: 0.6; }
-        90% { opacity: 0.6; }
-        100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+        0% {
+          transform: translateY(100vh) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-100px) translateX(20px);
+          opacity: 0;
+        }
       }
     </style>
   </head>
@@ -285,7 +385,12 @@
           <p class="card-desc">智能记账与其他功能</p>
         </a>
 
-        <a href="https://docs.caacle.com/zTree_v3/api/API_cn.html" target="_blank" class="nav-card" title="查看 zTree API 文档">
+        <a
+          href="https://docs.caacle.com/zTree_v3/api/API_cn.html"
+          target="_blank"
+          class="nav-card"
+          title="查看 zTree API 文档"
+        >
           <div class="card-icon">🌳</div>
           <h2 class="card-title">zTree 文档</h2>
           <p class="card-desc">强大的树形结构插件API指南</p>
@@ -297,13 +402,23 @@
           <p class="card-desc">基于 Element-UI 的前端 UI 组件库</p>
         </a>
 
-        <a href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765" target="_blank" class="nav-card" title="办理流量卡1">
+        <a
+          href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765"
+          target="_blank"
+          class="nav-card"
+          title="办理流量卡1"
+        >
           <div class="card-icon">📱</div>
           <h2 class="card-title">流量卡办理1</h2>
           <p class="card-desc">超值流量套餐优惠办理</p>
         </a>
 
-        <a href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369" target="_blank" class="nav-card" title="流量卡办理2">
+        <a
+          href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369"
+          target="_blank"
+          class="nav-card"
+          title="流量卡办理2"
+        >
           <div class="card-icon">📶</div>
           <h2 class="card-title">流量卡办理2</h2>
           <p class="card-desc">高速稳定网络连接方案</p>
@@ -319,7 +434,7 @@
 
     <!-- Particles.js 库 -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
+
     <script>
       // 全局状态管理
       let isActive = false;
@@ -327,11 +442,11 @@
       let resizeTimer = null;
 
       // 页面加载完成
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         setTimeout(() => {
-          document.getElementById('loading').style.opacity = '0';
+          document.getElementById("loading").style.opacity = "0";
           setTimeout(() => {
-            document.getElementById('loading').remove();
+            document.getElementById("loading").remove();
           }, 500);
         }, 800);
       });
@@ -343,24 +458,26 @@
             window.pJSDom[0].pJS.fn.vendors.destroypJS();
             window.pJSDom = [];
           }
-        } catch (e) { console.warn('Destroy error:', e); }
-        
-        const fallback = document.getElementById('fallback-particles');
-        if (fallback) fallback.innerHTML = '';
-        
+        } catch (e) {
+          console.warn("Destroy error:", e);
+        }
+
+        const fallback = document.getElementById("fallback-particles");
+        if (fallback) fallback.innerHTML = "";
+
         isActive = false;
         currentType = null;
       }
 
       function initSystem() {
         destroySystem();
-        
-        if (typeof particlesJS !== 'undefined') {
+
+        if (typeof particlesJS !== "undefined") {
           initParticles();
-          currentType = 'particlesjs';
+          currentType = "particlesjs";
         } else {
           initFallback();
-          currentType = 'fallback';
+          currentType = "fallback";
         }
         isActive = true;
       }
@@ -368,40 +485,61 @@
       function initParticles() {
         try {
           const mobile = window.innerWidth <= 768;
-          particlesJS('particles-js', {
+          particlesJS("particles-js", {
             particles: {
               number: { value: mobile ? 40 : 80, density: { enable: true, value_area: mobile ? 600 : 800 } },
-              color: { value: '#00f3ff' },
-              shape: { type: 'circle' },
+              color: { value: "#00f3ff" },
+              shape: { type: "circle" },
               opacity: { value: 0.5, random: true },
               size: { value: mobile ? 2 : 3, random: true },
-              line_linked: { enable: true, distance: mobile ? 100 : 150, color: '#00f3ff', opacity: mobile ? 0.2 : 0.3, width: 1 },
-              move: { enable: true, speed: mobile ? 1 : 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+              line_linked: {
+                enable: true,
+                distance: mobile ? 100 : 150,
+                color: "#00f3ff",
+                opacity: mobile ? 0.2 : 0.3,
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: mobile ? 1 : 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+              },
             },
             interactivity: {
-              detect_on: 'canvas',
-              events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: false },
-              modes: { repulse: { distance: mobile ? 80 : 100, duration: 0.4 }, push: { particles_nb: mobile ? 2 : 4 } }
+              detect_on: "canvas",
+              events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
+                resize: false,
+              },
+              modes: {
+                repulse: { distance: mobile ? 80 : 100, duration: 0.4 },
+                push: { particles_nb: mobile ? 2 : 4 },
+              },
             },
-            retina_detect: true
+            retina_detect: true,
           });
         } catch (e) {
-          console.error('Particles init error:', e);
+          console.error("Particles init error:", e);
           initFallback();
-          currentType = 'fallback';
+          currentType = "fallback";
         }
       }
 
       function initFallback() {
-        const container = document.getElementById('fallback-particles');
+        const container = document.getElementById("fallback-particles");
         if (!container) return;
-        
-        container.innerHTML = '';
+
+        container.innerHTML = "";
         const count = window.innerWidth <= 768 ? 20 : 40;
-        
+
         for (let i = 0; i < count; i++) {
-          const el = document.createElement('div');
-          el.className = 'particle';
+          const el = document.createElement("div");
+          el.className = "particle";
           const size = Math.random() * 4 + 1;
           el.style.cssText = `
             width: ${size}px;
@@ -419,33 +557,33 @@
       function handleResize() {
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-          console.log('Resizing particle system...');
+          console.log("Resizing particle system...");
           initSystem();
         }, 300);
       }
 
       // 初始化
-      document.addEventListener('DOMContentLoaded', () => setTimeout(initSystem, 100));
-      window.addEventListener('resize', handleResize);
+      document.addEventListener("DOMContentLoaded", () => setTimeout(initSystem, 100));
+      window.addEventListener("resize", handleResize);
 
       // 链接处理
       function updateLinks() {
         const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-        const link = document.querySelector('.account-link');
-        if (link) link.href = isMobile ? 'https://m.keep-silent.com' : 'https://admin.keep-silent.com';
+        const link = document.querySelector(".account-link");
+        if (link) link.href = isMobile ? "https://m.keep-silent.com" : "https://admin.keep-silent.com";
       }
       updateLinks();
 
       // 交互效果
-      document.querySelectorAll('.nav-card').forEach(card => {
-        card.addEventListener('click', function(e) {
+      document.querySelectorAll(".nav-card").forEach((card) => {
+        card.addEventListener("click", function (e) {
           e.preventDefault();
-          const ripple = document.createElement('span');
+          const ripple = document.createElement("span");
           const rect = this.getBoundingClientRect();
           const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size/2;
-          const y = e.clientY - rect.top - size/2;
-          
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
           ripple.style.cssText = `
             position: absolute;
             width: ${size}px;
@@ -459,29 +597,32 @@
             pointer-events: none;
             z-index: 10;
           `;
-          
+
           this.appendChild(ripple);
           setTimeout(() => {
             ripple.remove();
-            window.open(this.href, this.target || '_self');
+            window.open(this.href, this.target || "_self");
           }, 300);
         });
       });
 
       // 添加涟漪动画
-      document.head.insertAdjacentHTML('beforeend', `
+      document.head.insertAdjacentHTML(
+        "beforeend",
+        `
         <style>
           @keyframes ripple {
             to { transform: scale(4); opacity: 0; }
           }
           @media (max-width: 767px) { body { font-size: 16px; } }
         </style>
-      `);
+      `,
+      );
 
       // 错误恢复
-      window.addEventListener('error', e => {
-        if (e.error?.message?.includes('particles')) {
-          console.log('Recovering particle system...');
+      window.addEventListener("error", (e) => {
+        if (e.error?.message?.includes("particles")) {
+          console.log("Recovering particle system...");
           setTimeout(() => !isActive && initSystem(), 1000);
         }
       });
