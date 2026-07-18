@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Ghosie 导航页，keep silent 官方网站，提供博客、记账系统、zTree 文档、SG-UI 组件库、流量卡办理、工具箱等常用服务入口。"
+      content="Ghosie 导航页，keep silent 官方网站，提供博客、记账系统、zTree 文档、SG-UI 组件库、流量卡办理、工具箱、随便买等常用服务入口。"
     />
     <meta name="keywords" content="导航页, Ghosie, 博客, 记账系统, zTree, SG-UI, 流量卡办理, 开发者工具" />
     <meta property="og:title" content="Ghosie 导航页" />
     <meta property="og:description" content="keep silent 官方网站，现代化响应式导航页面，连接技术与创意的桥梁" />
     <meta property="og:url" content="https://keep-silent.com" />
     <title>Ghosie 导航</title>
+
+    <!-- CDN 预连接 -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
     <style>
       :root {
         --primary: #00f3ff;
@@ -22,7 +27,7 @@
         --text-main: #ffffff;
         --text-sub: #cccccc;
         --glow: 0 0 15px;
-        --transition: 0.4s;
+        --transition-duration: 0.4s;
       }
 
       * {
@@ -74,7 +79,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: var(--glow) var(--primary);
+        filter: drop-shadow(0 0 15px var(--primary));
         letter-spacing: 2px;
       }
 
@@ -96,42 +101,24 @@
         padding: 2rem;
         text-decoration: none;
         color: var(--text-main);
-        transition: all var(--transition) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition:
+          transform var(--transition-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          border-color var(--transition-duration),
+          box-shadow var(--transition-duration),
+          background var(--transition-duration);
         position: relative;
         overflow: hidden;
         backdrop-filter: blur(10px);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        animation: fadeUp 0.8s ease-out;
-        animation-fill-mode: backwards;
+        animation: fadeUp 0.8s ease-out backwards;
+        animation-delay: calc(var(--i, 0) * 0.1s);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
         min-height: 200px;
-      }
-
-      /* 卡片动画延迟 */
-      .nav-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .nav-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .nav-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .nav-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .nav-card:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      .nav-card:nth-child(6) {
-        animation-delay: 0.6s;
-      }
-      .nav-card:nth-child(7) {
-        animation-delay: 0.7s;
+        will-change: transform;
       }
 
       /* 卡片悬停效果 */
@@ -146,7 +133,7 @@
       .card-icon {
         font-size: 3rem;
         margin-bottom: 1.5rem;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
       }
 
       .nav-card:hover .card-icon {
@@ -190,113 +177,32 @@
 
       /* 动画定义 */
       @keyframes fadeSlide {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-30px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
 
       @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
 
       @keyframes glowRotate {
-        0%,
-        100% {
-          filter: hue-rotate(0deg);
-        }
-        50% {
-          filter: hue-rotate(180deg);
-        }
+        0%, 100% { filter: hue-rotate(0deg); }
+        50%      { filter: hue-rotate(180deg); }
       }
 
-      /* 响应式设计 */
-      @media (min-width: 1400px) {
-        .nav-grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-        .container {
-          padding: 3rem;
-        }
+      @keyframes ripple {
+        to { transform: scale(4); opacity: 0; }
       }
 
-      @media (min-width: 1024px) and (max-width: 1399px) {
-        .nav-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @media (min-width: 768px) and (max-width: 1023px) {
-        .nav-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .container {
-          padding: 1.5rem;
-        }
-        .header h1 {
-          font-size: 2.8rem;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .nav-grid {
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-        .container {
-          padding: 1rem;
-        }
-        .header {
-          margin: 1rem 0 2rem;
-        }
-        .header h1 {
-          font-size: 2rem;
-          letter-spacing: 1px;
-        }
-        .nav-card {
-          padding: 1.5rem;
-          min-height: 160px;
-        }
-        .card-icon {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-        }
-        .card-title {
-          font-size: 1.3rem;
-        }
-        .card-desc {
-          font-size: 0.85rem;
-          max-width: 100%;
-        }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
 
       /* 加载动画 */
       .loading {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: var(--bg-dark);
         display: flex;
         justify-content: center;
@@ -314,12 +220,6 @@
         animation: spin 1s linear infinite;
       }
 
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
       /* 备用粒子动画 */
       .fallback-particles {
         position: fixed;
@@ -332,25 +232,42 @@
         position: absolute;
         background: var(--primary);
         border-radius: 50%;
-        opacity: 0.6;
         animation: float linear infinite;
       }
 
       @keyframes float {
-        0% {
-          transform: translateY(100vh) translateX(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.6;
-        }
-        90% {
-          opacity: 0.6;
-        }
-        100% {
-          transform: translateY(-100px) translateX(20px);
-          opacity: 0;
-        }
+        0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+        10%  { opacity: 0.6; }
+        90%  { opacity: 0.6; }
+        100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+      }
+
+      /* 响应式设计 */
+      @media (min-width: 1400px) {
+        .nav-grid { grid-template-columns: repeat(4, 1fr); }
+        .container { padding: 3rem; }
+      }
+
+      @media (min-width: 1024px) and (max-width: 1399px) {
+        .nav-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .nav-grid { grid-template-columns: repeat(2, 1fr); }
+        .container { padding: 1.5rem; }
+        .header h1 { font-size: 2.8rem; }
+      }
+
+      @media (max-width: 767px) {
+        .nav-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .container { padding: 1rem; }
+        .header { margin: 1rem 0 2rem; }
+        .header h1 { font-size: 2rem; letter-spacing: 1px; }
+        .nav-card { padding: 1.5rem; min-height: 160px; }
+        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .card-title { font-size: 1.3rem; }
+        .card-desc { font-size: 0.85rem; max-width: 100%; }
+        body { font-size: 16px; }
       }
     </style>
   </head>
@@ -366,272 +283,238 @@
     <div class="fallback-particles" id="fallback-particles"></div>
 
     <div class="container">
-      <!-- 简洁标题 -->
       <header class="header">
         <h1>GHOSIE 导航</h1>
       </header>
 
-      <!-- 导航网格 -->
       <main class="nav-grid">
-        <a href="https://blog.keep-silent.com" target="_blank" class="nav-card" title="访问博客">
+        <a href="https://blog.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:1" title="访问博客">
           <div class="card-icon">📝</div>
           <h2 class="card-title">博客</h2>
           <p class="card-desc">分享编程心得与技术文章</p>
         </a>
 
-        <a href="#" class="nav-card account-link" title="访问记账系统">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="nav-card account-link" style="--i:2" title="访问记账系统">
           <div class="card-icon">💰</div>
           <h2 class="card-title">饭卡记账</h2>
           <p class="card-desc">智能记账与其他功能</p>
         </a>
 
-        <a
-          href="https://docs.caacle.com/zTree_v3/api/API_cn.html"
-          target="_blank"
-          class="nav-card"
-          title="查看 zTree API 文档"
-        >
+        <a href="https://docs.caacle.com/zTree_v3/api/API_cn.html" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:3" title="查看 zTree API 文档">
           <div class="card-icon">🌳</div>
           <h2 class="card-title">zTree 文档</h2>
           <p class="card-desc">强大的树形结构插件API指南</p>
         </a>
 
-        <a href="https://sg-ui.keep-silent.com" target="_blank" class="nav-card" title="访问 SG-UI 组件库">
+        <a href="https://sg-ui.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:4" title="访问 SG-UI 组件库">
           <div class="card-icon">🎨</div>
           <h2 class="card-title">SG-UI 组件库</h2>
           <p class="card-desc">基于 Element-UI 的前端 UI 组件库</p>
         </a>
 
-        <a
-          href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765"
-          target="_blank"
-          class="nav-card"
-          title="办理流量卡1"
-        >
+        <a href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:5" title="办理流量卡1">
           <div class="card-icon">📱</div>
           <h2 class="card-title">流量卡办理1</h2>
           <p class="card-desc">超值流量套餐优惠办理</p>
         </a>
 
-        <a
-          href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369"
-          target="_blank"
-          class="nav-card"
-          title="流量卡办理2"
-        >
+        <a href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:6" title="流量卡办理2">
           <div class="card-icon">📶</div>
           <h2 class="card-title">流量卡办理2</h2>
           <p class="card-desc">高速稳定网络连接方案</p>
         </a>
 
-        <a href="https://tools.keep-silent.com" target="_blank" class="nav-card" title="访问工具箱">
+        <a href="https://tools.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:7" title="访问工具箱">
           <div class="card-icon">🔧</div>
           <h2 class="card-title">开发者工具箱</h2>
           <p class="card-desc">实用在线工具集合</p>
         </a>
 
-        <a href="https://win11.keep-silent.com" target="_blank" class="nav-card" title="使用vue仿win11">
+        <a href="https://win11.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:8" title="使用vue仿win11">
           <div class="card-icon">💻</div>
           <h2 class="card-title">Web Win11</h2>
           <p class="card-desc">浏览器里的 Windows 11</p>
         </a>
+
+        <a href="https://freebuy.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:9" title="随便买">
+          <div class="card-icon">🛒</div>
+          <h2 class="card-title">随便买</h2>
+          <p class="card-desc">解压虚拟购买，随便买不花钱</p>
+        </a>
       </main>
     </div>
 
-    <!-- Particles.js 库 -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-      // 全局状态管理
-      let isActive = false;
-      let currentType = null;
-      let resizeTimer = null;
+      (function () {
+        'use strict';
 
-      // 页面加载完成
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.getElementById("loading").style.opacity = "0";
-          setTimeout(() => {
-            document.getElementById("loading").remove();
-          }, 500);
-        }, 800);
-      });
+        const MOBILE_BP = 768;
+        const RESIZE_DEBOUNCE = 300;
+        let isActive = false;
+        let resizeTimer = null;
 
-      // 粒子系统管理
-      function destroySystem() {
-        try {
-          if (window.pJSDom?.[0]?.pJS) {
-            window.pJSDom[0].pJS.fn.vendors.destroypJS();
-            window.pJSDom = [];
-          }
-        } catch (e) {
-          console.warn("Destroy error:", e);
-        }
-
-        const fallback = document.getElementById("fallback-particles");
-        if (fallback) fallback.innerHTML = "";
-
-        isActive = false;
-        currentType = null;
-      }
-
-      function initSystem() {
-        destroySystem();
-
-        if (typeof particlesJS !== "undefined") {
-          initParticles();
-          currentType = "particlesjs";
-        } else {
-          initFallback();
-          currentType = "fallback";
-        }
-        isActive = true;
-      }
-
-      function initParticles() {
-        try {
-          const mobile = window.innerWidth <= 768;
-          particlesJS("particles-js", {
-            particles: {
-              number: { value: mobile ? 40 : 80, density: { enable: true, value_area: mobile ? 600 : 800 } },
-              color: { value: "#00f3ff" },
-              shape: { type: "circle" },
-              opacity: { value: 0.5, random: true },
-              size: { value: mobile ? 2 : 3, random: true },
-              line_linked: {
-                enable: true,
-                distance: mobile ? 100 : 150,
-                color: "#00f3ff",
-                opacity: mobile ? 0.2 : 0.3,
-                width: 1,
-              },
-              move: {
-                enable: true,
-                speed: mobile ? 1 : 2,
-                direction: "none",
-                random: true,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-              },
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: { enable: true, mode: "repulse" },
-                onclick: { enable: true, mode: "push" },
-                resize: false,
-              },
-              modes: {
-                repulse: { distance: mobile ? 80 : 100, duration: 0.4 },
-                push: { particles_nb: mobile ? 2 : 4 },
-              },
-            },
-            retina_detect: true,
-          });
-        } catch (e) {
-          console.error("Particles init error:", e);
-          initFallback();
-          currentType = "fallback";
-        }
-      }
-
-      function initFallback() {
-        const container = document.getElementById("fallback-particles");
-        if (!container) return;
-
-        container.innerHTML = "";
-        const count = window.innerWidth <= 768 ? 20 : 40;
-
-        for (let i = 0; i < count; i++) {
-          const el = document.createElement("div");
-          el.className = "particle";
-          const size = Math.random() * 4 + 1;
-          el.style.cssText = `
-            width: ${size}px;
-            height: ${size}px;
-            left: ${Math.random() * 100}%;
-            animation-duration: ${Math.random() * 10 + 10}s;
-            animation-delay: ${Math.random() * 5}s;
-            opacity: ${Math.random() * 0.5 + 0.2};
-          `;
-          container.appendChild(el);
-        }
-      }
-
-      // 防抖resize处理
-      function handleResize() {
-        if (resizeTimer) clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          console.log("Resizing particle system...");
-          initSystem();
-        }, 300);
-      }
-
-      // 初始化
-      document.addEventListener("DOMContentLoaded", () => setTimeout(initSystem, 100));
-      window.addEventListener("resize", handleResize);
-
-      // 链接处理
-      function updateLinks() {
-        const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-        const link = document.querySelector(".account-link");
-        if (link) link.href = isMobile ? "https://m.keep-silent.com" : "https://admin.keep-silent.com";
-      }
-      updateLinks();
-
-      // 交互效果
-      document.querySelectorAll(".nav-card").forEach((card) => {
-        card.addEventListener("click", function (e) {
-          e.preventDefault();
-          const ripple = document.createElement("span");
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size / 2;
-          const y = e.clientY - rect.top - size / 2;
-
-          ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            background: radial-gradient(circle, rgba(0,243,255,0.6) 0%, transparent 70%);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-            z-index: 10;
-          `;
-
-          this.appendChild(ripple);
-          setTimeout(() => {
-            ripple.remove();
-            window.open(this.href, this.target || "_self");
-          }, 300);
+        // 页面加载完成
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            var el = document.getElementById('loading');
+            el.style.opacity = '0';
+            setTimeout(function () { el.remove(); }, 500);
+          }, 800);
         });
-      });
 
-      // 添加涟漪动画
-      document.head.insertAdjacentHTML(
-        "beforeend",
-        `
-        <style>
-          @keyframes ripple {
-            to { transform: scale(4); opacity: 0; }
-          }
-          @media (max-width: 767px) { body { font-size: 16px; } }
-        </style>
-      `,
-      );
+        // 粒子系统管理
+        function destroySystem() {
+          try {
+            if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+              window.pJSDom[0].pJS.fn.vendors.destroypJS();
+              window.pJSDom = [];
+            }
+          } catch (e) { /* ignore */ }
 
-      // 错误恢复
-      window.addEventListener("error", (e) => {
-        if (e.error?.message?.includes("particles")) {
-          console.log("Recovering particle system...");
-          setTimeout(() => !isActive && initSystem(), 1000);
+          var fallback = document.getElementById('fallback-particles');
+          if (fallback) fallback.innerHTML = '';
+
+          isActive = false;
         }
-      });
+
+        function initParticles() {
+          try {
+            var mobile = window.innerWidth <= MOBILE_BP;
+            particlesJS('particles-js', {
+              particles: {
+                number: { value: mobile ? 40 : 80, density: { enable: true, value_area: mobile ? 600 : 800 } },
+                color: { value: '#00f3ff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: mobile ? 2 : 3, random: true },
+                line_linked: {
+                  enable: true,
+                  distance: mobile ? 100 : 150,
+                  color: '#00f3ff',
+                  opacity: mobile ? 0.2 : 0.3,
+                  width: 1
+                },
+                move: {
+                  enable: true,
+                  speed: mobile ? 1 : 2,
+                  direction: 'none',
+                  random: true,
+                  straight: false,
+                  out_mode: 'out',
+                  bounce: false
+                }
+              },
+              interactivity: {
+                detect_on: 'canvas',
+                events: {
+                  onhover: { enable: true, mode: 'repulse' },
+                  onclick: { enable: true, mode: 'push' },
+                  resize: false
+                },
+                modes: {
+                  repulse: { distance: mobile ? 80 : 100, duration: 0.4 },
+                  push: { particles_nb: mobile ? 2 : 4 }
+                }
+              },
+              retina_detect: true
+            });
+          } catch (e) {
+            initFallback();
+          }
+        }
+
+        function initFallback() {
+          var container = document.getElementById('fallback-particles');
+          if (!container) return;
+
+          container.innerHTML = '';
+          var count = window.innerWidth <= MOBILE_BP ? 20 : 40;
+
+          var frag = document.createDocumentFragment();
+          for (var i = 0; i < count; i++) {
+            var el = document.createElement('div');
+            el.className = 'particle';
+            var size = Math.random() * 4 + 1;
+            el.style.cssText =
+              'width:' + size + 'px;' +
+              'height:' + size + 'px;' +
+              'left:' + (Math.random() * 100) + '%;' +
+              'animation-duration:' + (Math.random() * 10 + 10) + 's;' +
+              'animation-delay:' + (Math.random() * 5) + 's;' +
+              'opacity:' + (Math.random() * 0.5 + 0.2);
+            frag.appendChild(el);
+          }
+          container.appendChild(frag);
+        }
+
+        function initSystem() {
+          destroySystem();
+          if (typeof particlesJS !== 'undefined') {
+            initParticles();
+          } else {
+            initFallback();
+          }
+          isActive = true;
+        }
+
+        // 防抖 resize
+        function handleResize() {
+          if (resizeTimer) clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(initSystem, RESIZE_DEBOUNCE);
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(initSystem, 100); });
+        window.addEventListener('resize', handleResize);
+
+        // 链接处理 — 记账系统根据设备跳转不同地址
+        (function () {
+          var isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+          var link = document.querySelector('.account-link');
+          if (link) link.href = isMobile ? 'https://m.keep-silent.com' : 'https://admin.keep-silent.com';
+        })();
+
+        // 涟漪点击效果
+        document.querySelectorAll('.nav-card').forEach(function (card) {
+          card.addEventListener('click', function (e) {
+            e.preventDefault();
+            var self = this;
+            var ripple = document.createElement('span');
+            var rect = self.getBoundingClientRect();
+            var size = Math.max(rect.width, rect.height);
+            var x = e.clientX - rect.left - size / 2;
+            var y = e.clientY - rect.top - size / 2;
+
+            ripple.style.cssText =
+              'position:absolute;' +
+              'width:' + size + 'px;' +
+              'height:' + size + 'px;' +
+              'left:' + x + 'px;' +
+              'top:' + y + 'px;' +
+              'background:radial-gradient(circle,rgba(0,243,255,0.6) 0%,transparent 70%);' +
+              'border-radius:50%;' +
+              'transform:scale(0);' +
+              'animation:ripple 0.6s linear;' +
+              'pointer-events:none;' +
+              'z-index:10';
+
+            self.appendChild(ripple);
+            setTimeout(function () {
+              ripple.remove();
+              window.open(self.href, self.target || '_self');
+            }, 300);
+          });
+        });
+
+        // 错误恢复
+        window.addEventListener('error', function (e) {
+          if (e.error && e.error.message && e.error.message.indexOf('particles') > -1) {
+            setTimeout(function () { if (!isActive) initSystem(); }, 1000);
+          }
+        });
+      })();
     </script>
   </body>
 </html>
