@@ -2,15 +2,20 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="0dB 导航，提供博客、记账系统、SG-UI 组件库、流量卡办理、开发者工具箱、Web Win11、随便买等常用服务入口。"
-    />
-    <meta name="keywords" content="0dB, 导航页, 博客, 记账系统, SG-UI, 流量卡办理, 开发者工具, Web Win11, 随便买" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="description" content="0dB 个人导航，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买等常用服务入口。" />
+    <meta name="keywords" content="0dB, 导航页, 博客, 记账系统, SG-UI, 开发者工具, Web Win11, 随便买" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="0dB" />
     <meta property="og:description" content="0dB 个人导航页面，汇集博客、组件库、工具、购物等常用服务入口" />
     <meta property="og:url" content="https://keep-silent.com" />
+    <meta property="og:image" content="https://keep-silent.com/og-image.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="0dB" />
+    <meta name="twitter:description" content="0dB 个人导航页面，汇集博客、组件库、工具、购物等常用服务入口" />
     <title>0dB</title>
 
     <!-- CDN 预连接 -->
@@ -30,10 +35,19 @@
         --transition-duration: 0.4s;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+
+      ::selection {
+        background: rgba(0, 243, 255, 0.3);
+        color: #fff;
       }
 
       body {
@@ -43,6 +57,8 @@
         min-height: 100vh;
         overflow-x: hidden;
         position: relative;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: 100%;
       }
 
       /* 粒子背景 */
@@ -109,6 +125,7 @@
         position: relative;
         overflow: hidden;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         animation: fadeUp 0.8s ease-out backwards;
         animation-delay: calc(var(--i, 0) * 0.1s);
@@ -119,6 +136,7 @@
         text-align: center;
         min-height: 200px;
         will-change: transform;
+        touch-action: manipulation;
       }
 
       /* 卡片悬停效果 */
@@ -145,6 +163,7 @@
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
+        color: var(--accent);
         background: linear-gradient(45deg, var(--accent), var(--primary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -269,6 +288,14 @@
         .card-desc { font-size: 0.85rem; max-width: 100%; }
         body { font-size: 16px; }
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
   </head>
 
@@ -306,31 +333,19 @@
           <p class="card-desc">基于 Element-UI 的前端 UI 组件库</p>
         </a>
 
-        <a href="https://h5.haokavip.com/#/pages/sales_index/index?agent_id=572765" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:4" title="办理流量卡1">
-          <div class="card-icon">📱</div>
-          <h2 class="card-title">流量卡办理1</h2>
-          <p class="card-desc">超值流量套餐优惠办理</p>
-        </a>
-
-        <a href="https://h5.lot-ml.com/ProductEn/Index/19b8a10403e4d369" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:5" title="流量卡办理2">
-          <div class="card-icon">📶</div>
-          <h2 class="card-title">流量卡办理2</h2>
-          <p class="card-desc">高速稳定网络连接方案</p>
-        </a>
-
-        <a href="https://tools.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:6" title="访问工具箱">
+        <a href="https://tools.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:4" title="访问工具箱">
           <div class="card-icon">🔧</div>
           <h2 class="card-title">开发者工具箱</h2>
           <p class="card-desc">实用在线工具集合</p>
         </a>
 
-        <a href="https://win11.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:7" title="使用vue仿win11">
+        <a href="https://win11.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:5" title="使用vue仿win11">
           <div class="card-icon">💻</div>
           <h2 class="card-title">Web Win11</h2>
           <p class="card-desc">浏览器里的 Windows 11</p>
         </a>
 
-        <a href="https://freebuy.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:8" title="随便买">
+        <a href="https://freebuy.keep-silent.com" target="_blank" rel="noopener noreferrer" class="nav-card" style="--i:6" title="随便买">
           <div class="card-icon">🛒</div>
           <h2 class="card-title">随便买</h2>
           <p class="card-desc">解压虚拟购买，随便买不花钱</p>
