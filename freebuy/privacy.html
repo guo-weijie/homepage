@@ -1,212 +1,377 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>随便买隐私政策</title>
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="lL9wCZVNkqXSiQ2zruJYSm">
+  <head data-page-node-id="klQpbHxHWngARoHc97cot8">
+    <meta charset="UTF-8" data-page-node-id="F8iOUw0L89EEfrh7qpJAXn" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" data-page-node-id="iBceXQiUpl5vT8epHZMAAA" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      data-page-node-id="y9DX1q0FvtoltBc9UrY3NI"
+    />
+    <meta name="format-detection" content="telephone=no, email=no" data-page-node-id="3t1FaOAi1WO5nG353pKMMx" />
+    <meta
+      name="description"
+      content="随便买（FreeBuy）隐私政策：说明我们如何收集、使用、存储和共享您的个人信息，以及您享有的相关权利。"
+      data-page-node-id="Pq2dYZS7gtclZatxjo1prS"
+    />
+    <meta
+      name="keywords"
+      content="随便买, FreeBuy, 隐私政策, 个人信息保护"
+      data-page-node-id="lxV8Vkn8ikUUiYPYSfjDd0"
+    />
+    <meta name="theme-color" content="#FF6B81" data-page-node-id="V3GB0P3hkavGTFk8R3UwUT" />
+    <meta property="og:type" content="website" data-page-node-id="nis7Zx4NXqHxAWpAz77eGJ" />
+    <meta property="og:title" content="随便买隐私政策" data-page-node-id="7mdFxr6nPd8ecEnzkCSNcM" />
+    <meta property="og:description" content="随便买（FreeBuy）隐私政策" data-page-node-id="arS4cDjgKoP2AGQhTGPynn" />
+    <title>隐私政策 - 随便买</title>
+    <link rel="icon" href="/favicon.ico" data-page-node-id="BcrwvV1BF1qTBKFLkOIWPh" />
+    <style>
+      :root {
+        --brand: #ff6b81;
+        --brand-soft: #fff0f3;
+        --bg-page: #f7f8fa;
+        --bg-card: #ffffff;
+        --text-title: #333333;
+        --text-secondary: #6b7280;
+        --text-tertiary: #b0b7c3;
+        --border: #e5e7eb;
+      }
 
-    body {
-      min-height: 100vh;
-      background: #F7F8FA;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.625;
-    }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --brand: #ff8e9e;
+          --brand-soft: rgba(255, 107, 129, 0.15);
+          --bg-page: #1a1c1e;
+          --bg-card: #2a2d30;
+          --text-title: #e8eaed;
+          --text-secondary: #9aa0a6;
+          --text-tertiary: #5a6068;
+          --border: #3c4043;
+        }
+      }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    .header {
-      background: #fff;
-      border-bottom: 1px solid #EBEDF0;
-      padding: 0 16px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(255, 255, 255, 0.95);
-    }
+      html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+      }
 
-    .header-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-    }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: var(--bg-page);
+        color: var(--text-title);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* ===== 内容区 ===== */
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 24px 16px 0;
+      }
 
-    .content {
-      padding: 24px 0 48px;
-    }
+      .doc-title {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        line-height: 1.5;
+      }
 
-    .title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
+      .doc-meta {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--text-tertiary);
+        line-height: 1.9;
+      }
 
-    .meta {
-      display: block;
-      font-size: 0.75rem;
-      color: #999;
-      margin-top: 8px;
-    }
+      .doc-meta span {
+        display: block;
+      }
 
-    .meta + .meta {
-      margin-top: 4px;
-    }
+      .lead {
+        margin-top: 16px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-align: justify;
+      }
 
-    .section-title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-top: 24px;
-    }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 32px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text-title);
+      }
 
-    .sub-title {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #1a1a1a;
-      margin-top: 12px;
-    }
+      h2::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 3px;
+        height: 14px;
+        border-radius: 2px;
+        background: var(--brand);
+      }
 
-    .section-text {
-      font-size: 0.875rem;
-      color: #666;
-      margin-top: 8px;
-      line-height: 1.625;
-    }
+      h3 {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-title);
+      }
 
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-top: 4px;
-      font-size: 0.875rem;
-      color: #666;
-      line-height: 1.625;
-    }
+      .section {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-align: justify;
+      }
 
-    .list-item {
-      padding-left: 0;
-    }
+      .clause {
+        display: block;
+        margin-top: 8px;
+      }
 
-    footer {
-      text-align: center;
-      padding: 32px 16px;
-      font-size: 0.75rem;
-      color: #999;
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <span class="header-title">隐私政策</span>
-  </div>
+      .clause:first-child {
+        margin-top: 0;
+      }
 
-  <div class="container">
-    <div class="content">
-      <h1 class="title">随便买隐私政策</h1>
-      <span class="meta">更新日期：2026 年 7 月 28 日</span>
-      <span class="meta">生效日期：2026 年 7 月 28 日</span>
+      .bullet {
+        display: block;
+        position: relative;
+        margin-top: 6px;
+        padding-left: 18px;
+      }
+
+      .bullet::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 0.72em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--brand);
+        opacity: 0.75;
+      }
+
+      /* 虚拟玩法说明高亮块 */
+      .highlight {
+        margin-top: 10px;
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: var(--brand-soft);
+        border: 1px solid transparent;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-align: justify;
+      }
+
+      strong {
+        font-weight: 600;
+        color: var(--text-title);
+      }
+
+      a.mail {
+        color: var(--brand);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      a.mail:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== 页脚 ===== */
+      footer {
+        max-width: 720px;
+        margin: 40px auto 0;
+        padding: 20px 16px calc(32px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--text-tertiary);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      footer a {
+        color: var(--text-secondary);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--brand);
+      }
+
+      @media (max-width: 480px) {
+        .doc-title {
+          font-size: 20px;
+        }
+        .container {
+          padding: 20px 16px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-page-node-id="IXrLN6rl3vg5MjUIIukzEB">
+    <main class="container" data-page-node-id="M0ATyaekDC8alriKCVTNDp">
+      <h1 class="doc-title" data-page-node-id="lKB9U2uRnCYBBEhIVPIHeK">随便买隐私政策</h1>
+      <div class="doc-meta" data-page-node-id="pbeLVURxGxkBqca5g6U8Lm">
+        <span data-page-node-id="uuRnqWBxjHJk1HSw23BTlD">更新日期：2026 年 7 月 28 日</span>
+        <span data-page-node-id="hzbn8ihw7z9RGmHBAVxioc">生效日期：2026 年 7 月 28 日</span>
+      </div>
 
       <!-- 引言 -->
-      <h2 class="section-title">引言</h2>
-      <p class="section-text">
-        随便买（以下简称"我们"）深知个人信息对您的重要性，我们将按照法律法规的规定，保护您的个人信息安全。本隐私政策旨在向您说明我们如何收集、使用、存储和共享您的个人信息，以及您享有的相关权利。请您在使用我们的服务前，仔细阅读并充分理解本隐私政策。
+      <h2 data-page-node-id="v9od1z8Ftyf81NJ2jnrboe">引言</h2>
+      <p class="lead" data-page-node-id="yc9fBUJdcb2MGvrpg4ND9G">
+        随便买（以下简称“我们”）深知个人信息对您的重要性，我们将按照法律法规的规定，保护您的个人信息安全。本隐私政策旨在向您说明我们如何收集、使用、存储和共享您的个人信息，以及您享有的相关权利。请您在使用我们的服务前，仔细阅读并充分理解本隐私政策。
       </p>
 
       <!-- 一、我们收集的信息 -->
-      <h2 class="section-title">一、我们收集的信息</h2>
+      <h2 data-page-node-id="9IIKjUOTDdVorEjB8HJOKD">一、我们收集的信息</h2>
 
-      <h3 class="sub-title">1.1 您主动提供的信息</h3>
-      <div class="list">
-        <div class="list-item">• 账号信息：当您注册账号时，我们收集您的电子邮箱地址、Google 账号信息（如您选择 Google 登录）。</div>
-        <div class="list-item">• 个人资料：您可自愿设置昵称和头像，头像通过 DiceBear 在线服务生成。</div>
+      <h3 data-page-node-id="UrMD2quFVsVICgfZVstYd1">1.1 您主动提供的信息</h3>
+      <div class="section" data-page-node-id="o2jZxMtyZRIdcpNaj6UXSG">
+        <span class="bullet" data-page-node-id="8T6LD0u3kR3DYgpBONUpU9"
+          >账号信息：当您注册账号时，我们收集您的电子邮箱地址、Google 账号信息（如您选择 Google
+          登录，包括邮箱与公开昵称/头像，由 Google 依据其隐私政策提供）。</span
+        >
+        <span class="bullet" data-page-node-id="WILeQkDvzzSYAt1VbQPIMN"
+          >个人资料：您可自愿设置昵称和头像，头像通过 DiceBear 在线服务生成。</span
+        >
       </div>
 
-      <h3 class="sub-title">1.2 我们自动收集的信息</h3>
-      <div class="list">
-        <div class="list-item">• 设备信息：设备型号、操作系统版本、唯一设备标识符，用于保障服务稳定运行。</div>
-        <div class="list-item">• 运动数据：当您使用"运动赚大钱"功能时，我们读取您的每日步数数据，用于计算兑换金额。</div>
-        <div class="list-item">• 操作日志：您在应用内的签到、游戏、兑换、消费等操作记录。</div>
-        <div class="list-item">• 网络状态：用于判断网络环境以优化服务响应。</div>
+      <h3 data-page-node-id="Kb8u5PJOjDlMY6r1a2hgiU">1.2 我们自动收集的信息</h3>
+      <div class="section" data-page-node-id="GarQLX52TSCedERGbvA6yq">
+        <span class="bullet" data-page-node-id="74CFB8eO1DNcKO4hbLbQma"
+          >设备信息：设备型号、操作系统版本、唯一设备标识符（包括 OAID
+          匿名设备标识符），用于保障服务稳定运行及匿名统计分析。</span
+        >
+        <span class="bullet" data-page-node-id="AaECcD39AWSDVoWBIZaqXd"
+          >统计分析：我们使用匿名化的设备标识（如
+          OAID）进行产品使用情况分析，以了解功能使用情况、优化产品体验；该分析数据不与您的真实身份关联，我们不向任何广告标识符（Advertising
+          ID）或广告平台提供此类数据。</span
+        >
+        <span class="bullet" data-page-node-id="8vfQB54L8MdYCw5Sev36kQ"
+          >操作日志：您在应用内的签到、游戏、兑换、消费等操作记录。</span
+        >
+        <span class="bullet" data-page-node-id="0jGYsInE41c3ri6CiHkruO"
+          >网络状态：用于判断网络环境以优化服务响应。</span
+        >
       </div>
 
       <!-- 二、权限使用说明 -->
-      <h2 class="section-title">二、权限使用说明</h2>
-      <div class="list">
-        <div class="list-item">• 运动与健身权限：用于读取您的每日步数，仅在您使用"运动赚大钱"功能时调用。</div>
-        <div class="list-item">• 震动权限：用于游戏内的触觉反馈，提升交互体验。</div>
-        <div class="list-item">• 设备状态读取：用于识别设备以保障账号安全。</div>
-        <div class="list-item">• 网络访问权限：用于联网获取服务内容。</div>
+      <h2 data-page-node-id="UhzDotT6YuOK6bnpjYjewE">二、权限使用说明</h2>
+      <div class="section" data-page-node-id="HnAVVlo2Zip3D12VExMZwk">
+        <span class="bullet" data-page-node-id="dxaGKdNCD9BpaljPJPrfJB"
+          >震动权限：用于游戏内的触觉反馈，提升交互体验。</span
+        >
+        <span class="bullet" data-page-node-id="pWUZsxpBOpRDoBIBArDJLT"
+          >设备状态读取：用于识别设备以保障账号安全，其中包含读取 OAID 匿名设备标识符以进行匿名统计分析。</span
+        >
+        <span class="bullet" data-page-node-id="6LCICikJAdNFYaoUMcB8me">网络访问权限：用于联网获取服务内容。</span>
       </div>
 
       <!-- 三、信息的使用 -->
-      <h2 class="section-title">三、我们如何使用信息</h2>
-      <div class="list">
-        <div class="list-item">• 提供、维护和改善我们的服务。</div>
-        <div class="list-item">• 计算签到、步数兑换、游戏等活动的奖励金额。</div>
-        <div class="list-item">• 记录您的消费历史和收支明细。</div>
-        <div class="list-item">• 为您展示成就和徽章。</div>
-        <div class="list-item">• 防范安全风险，保护用户账号安全。</div>
-        <div class="list-item">• 遵守法律法规的要求。</div>
+      <h2 data-page-node-id="fmD1ABotHGGWnLzvaC9WIy">三、我们如何使用信息</h2>
+      <div class="section" data-page-node-id="GpIr61BSVfHzKlEjy4CiLe">
+        <span class="bullet" data-page-node-id="IoUfjLAVCmACQGRupoCLlP">提供、维护和改善我们的服务。</span>
+        <span class="bullet" data-page-node-id="LmTlbTLqZGnKxsOfSFy1CF">计算签到、游戏等活动的奖励金额。</span>
+        <span class="bullet" data-page-node-id="M013Zx3cT9viZ4aSulp2oo">记录您的消费历史和收支明细。</span>
+        <span class="bullet" data-page-node-id="rinZJxN9S7WlfFvtmtLM06">为您展示成就和徽章。</span>
+        <span class="bullet" data-page-node-id="T5smpnHeA7GyCMbCKiFn4b">防范安全风险，保护用户账号安全。</span>
+        <span class="bullet" data-page-node-id="dRg7puWHrhN52M43RxQnKN">遵守法律法规的要求。</span>
+      </div>
+
+      <!-- 虚拟玩法说明 -->
+      <h2 data-page-node-id="IGc1cxsKgcur3XNYMUz7mY">虚拟玩法说明</h2>
+      <div class="highlight" data-page-node-id="k4UHzwK3BoHxQridRGrXsl">
+        本应用内的“货币”“金币”等均为<strong data-page-node-id="EVn8XL2bSD0AOs5v1J0iLT">虚拟道具</strong
+        >，仅用于应用内的娱乐互动与展示，<strong data-page-node-id="HNJM7TTcUR0BzvTKY6j709"
+          >不可兑换、转让、提现为任何真实货币、实物或服务</strong
+        >。盲盒、开箱等玩法均为虚拟娱乐体验，所得道具亦为虚拟物品，不涉及任何真实财物。本应用不会以任何形式向用户索取真实金钱。
       </div>
 
       <!-- 四、信息的存储与安全 -->
-      <h2 class="section-title">四、信息的存储与安全</h2>
-      <p class="section-text">
-        您的个人信息存储在我们的安全服务器上。我们采用加密传输（HTTPS）、访问控制、数据备份等安全措施保护您的信息。除法律法规另有规定外，我们仅在实现本政策所述目的所需的最短期限内保留您的个人信息。
-      </p>
+      <h2 data-page-node-id="Oiix9lzoNkBp8nXjD78j8D">四、信息的存储与安全</h2>
+      <div class="section" data-page-node-id="uhFQOJJjXG2JGBs8QgOwmw">
+        您的个人信息存储在我们选定的云服务平台上（包括 Vercel Serverless 服务与 MongoDB
+        数据库服务，均可由我们在部署时指定数据中心区域）。若您身处服务所在区域之外，您的信息可能会被传输、存储和处理于其他国家和地区，相关跨境传输将依据本政策及适用法律进行。我们采用加密传输（HTTPS）、访问控制、数据备份等安全措施保护您的信息。除法律法规另有规定或您主动要求保留外，我们仅在实现本政策所述目的所需的期限内保留您的个人信息：账号信息保留至您注销账号后
+        30 天（用于争议处理与数据备份），操作日志与统计信息保留不超过 24
+        个月，匿名设备标识在您卸载或撤回同意后即停止关联。
+      </div>
 
       <!-- 五、信息的共享 -->
-      <h2 class="section-title">五、信息的共享与披露</h2>
-      <p class="section-text">
-        我们不会将您的个人信息出售给任何第三方。我们仅在以下情况共享您的信息：获得您的明确同意；与为我们提供服务的合作伙伴共享（如云服务提供商）；根据法律法规、司法程序或政府要求进行披露。
-      </p>
+      <h2 data-page-node-id="cqrC6Pvi3uCYcoaDceCGYl">五、信息的共享与披露</h2>
+      <div class="section" data-page-node-id="Ox0qgAKTpb8w8Adkoqq3h4">
+        <span class="bullet" data-page-node-id="Ubg9fbJwG3vWpvbTdSaNpg"
+          >我们不会将您的个人信息出售给任何第三方，也不会将其用于广告投放。</span
+        >
+        <span class="bullet" data-page-node-id="lLRLrtbT9JxulDXBOaFXZQ"
+          >与为您提供服务所必需的合作伙伴共享：云服务提供商 Vercel（用于运行服务端逻辑）与
+          MongoDB（用于存储数据）、DiceBear（用于生成头像）、Google（用于 Google
+          登录身份校验）。这些合作方仅在提供服务所必需的范围内处理您的信息。</span
+        >
+        <span class="bullet" data-page-node-id="UuSOhJSFtEobOrXffu8zr0">获得您的明确同意后进行共享。</span>
+        <span class="bullet" data-page-node-id="QQm0rGhBuj6L1RNZHMHiyJ"
+          >根据法律法规、司法程序、政府主管部门的强制性要求或为了维护公共安全与我们的合法权益进行披露。</span
+        >
+      </div>
 
       <!-- 六、您的权利 -->
-      <h2 class="section-title">六、您的权利</h2>
-      <div class="list">
-        <div class="list-item">• 查阅和修改：您可以在应用内随时查看和修改您的昵称、头像等个人信息。</div>
-        <div class="list-item">• 删除数据：您可以在设置中重置所有数据或注销账号。</div>
-        <div class="list-item">• 撤回同意：您可以通过设备系统设置撤回已授予的权限。</div>
+      <h2 data-page-node-id="cs0nlrzBU6kICptSeL6R4i">六、您的权利</h2>
+      <div class="section" data-page-node-id="F1PeSkeQGdNWBjm6mAJmGl">
+        <span class="bullet" data-page-node-id="EGKg6r1jmDmqNwaJzwag53"
+          >查阅和修改：您可以在应用内随时查看和修改您的昵称、头像等个人信息。</span
+        >
+        <span class="bullet" data-page-node-id="FRWZwgxcHKu9aBNFcftARI"
+          >删除数据：您可以在设置中重置所有数据或注销账号。</span
+        >
+        <span class="bullet" data-page-node-id="7lvEmSuaGC1y03uIh4RdTN"
+          >撤回同意：您可以通过设备系统设置撤回已授予的权限。</span
+        >
       </div>
 
       <!-- 七、未成年人保护 -->
-      <h2 class="section-title">七、未成年人保护</h2>
-      <p class="section-text">
-        我们的服务主要面向成年人。如果您是未满 18 周岁的未成年人，请在法定监护人的陪同下阅读本隐私政策，并在征得监护人同意后使用我们的服务。我们不会主动收集未成年人的个人信息，如发现误收集，将立即删除。
-      </p>
+      <h2 data-page-node-id="U4f07Np24OpGBcYgxQJSEn">七、未成年人保护</h2>
+      <div class="section" data-page-node-id="nnE4TsZAoMMmtY2GKIwaYC">
+        我们的服务主要面向成年人。如果您是未满 18
+        周岁的未成年人，请在法定监护人的陪同下阅读本隐私政策，并在征得监护人同意后使用我们的服务。我们不会主动收集未成年人的个人信息，如发现误收集，将立即删除。
+      </div>
 
       <!-- 八、政策更新 -->
-      <h2 class="section-title">八、政策更新</h2>
-      <p class="section-text">
+      <h2 data-page-node-id="Z9kUqROD0dARb6NVMGEcyS">八、政策更新</h2>
+      <div class="section" data-page-node-id="61HcDx7eCHyiIiimvIVyix">
         我们可能会不时更新本隐私政策。更新后，我们会在应用内发布新版本。重大变更将以弹窗或其他显著方式通知您。继续使用我们的服务即表示您同意受更新后的隐私政策约束。
-      </p>
+      </div>
 
       <!-- 九、联系我们 -->
-      <h2 class="section-title">九、联系我们</h2>
-      <p class="section-text">
-        如果您对本隐私政策有任何疑问、意见或建议，请通过以下方式联系我们：在应用内"设置 - 关于"页面提交反馈，或发送邮件至我们的官方邮箱。我们将在收到后尽快回复。
-      </p>
-    </div>
-  </div>
+      <h2 data-page-node-id="msI1hVJbXpKgC3meU9SXYz">九、联系我们</h2>
+      <div class="section" data-page-node-id="aBb3KoiVJQBqEvZep0ORt2">
+        如果您对本隐私政策有任何疑问、意见或建议，请通过以下方式联系我们：在应用内“设置 -
+        关于”页面提交反馈，或发送邮件至
+        <a class="mail" href="mailto:freebuy-code@foxmail.com" data-page-node-id="M1kPkyIAKfKXHGD1RMNHBd"
+          >freebuy-code@foxmail.com</a
+        >。我们将在收到后尽快回复。
+      </div>
+    </main>
 
-  <footer>
-    &copy; 2026 随便买 FreeBuy. All rights reserved.
-  </footer>
-</body>
+    <footer data-page-node-id="HGPI7m7h93084ztVxuTGGi">
+      <span data-page-node-id="g4avTVmY5LT8Dk3ie6VfQM">© 2026 随便买 FreeBuy</span>
+      <a href="./agreement.html" data-page-node-id="gRB3SsM9qTwfG9hoSxvEk1">用户协议</a>
+    </footer>
+  </body>
 </html>

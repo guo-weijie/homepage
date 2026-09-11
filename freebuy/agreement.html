@@ -1,216 +1,337 @@
-<!DOCTYPE html>
-<html lang="zh-CN"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>随便买用户协议</title>
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta
+      name="description"
+      content="随便买（FreeBuy）用户协议：服务说明、账号注册与使用、用户行为规范、虚拟资产说明、知识产权、免责声明、服务变更与终止等内容。"
+    />
+    <meta name="keywords" content="随便买, FreeBuy, 用户协议, 服务条款" />
+    <meta name="theme-color" content="#FF6B81" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="随便买用户协议" />
+    <meta property="og:description" content="随便买（FreeBuy）用户协议" />
+    <title>用户协议 - 随便买</title>
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --brand: #ff6b81;
+        --brand-soft: #fff0f3;
+        --bg-page: #f7f8fa;
+        --bg-card: #ffffff;
+        --text-title: #333333;
+        --text-secondary: #6b7280;
+        --text-tertiary: #b0b7c3;
+        --border: #e5e7eb;
+      }
 
-    body {
-      min-height: 100vh;
-      background: #F7F8FA;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #333;
-      line-height: 1.625;
-    }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --brand: #ff8e9e;
+          --brand-soft: rgba(255, 107, 129, 0.15);
+          --bg-page: #1a1c1e;
+          --bg-card: #2a2d30;
+          --text-title: #e8eaed;
+          --text-secondary: #9aa0a6;
+          --text-tertiary: #5a6068;
+          --border: #3c4043;
+        }
+      }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    .header {
-      background: #fff;
-      border-bottom: 1px solid #EBEDF0;
-      padding: 0 16px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      background: rgba(255, 255, 255, 0.95);
-    }
+      html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+      }
 
-    .header-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-    }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: var(--bg-page);
+        color: var(--text-title);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
 
-    .content {
-      padding: 24px 0 48px;
-    }
+      /* ===== 内容区 ===== */
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 24px 16px 0;
+      }
 
-    .title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
+      .doc-title {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        line-height: 1.5;
+      }
 
-    .meta {
-      display: block;
-      font-size: 0.75rem;
-      color: #999;
-      margin-top: 8px;
-    }
+      .doc-meta {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--text-tertiary);
+        line-height: 1.9;
+      }
 
-    .meta + .meta {
-      margin-top: 4px;
-    }
+      .doc-meta span {
+        display: block;
+      }
 
-    .section-title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-top: 24px;
-    }
+      .lead {
+        margin-top: 16px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-align: justify;
+      }
 
-    .sub-title {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #1a1a1a;
-      margin-top: 12px;
-    }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 32px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text-title);
+      }
 
-    .section-text {
-      font-size: 0.875rem;
-      color: #666;
-      margin-top: 8px;
-      line-height: 1.625;
-    }
+      h2::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 3px;
+        height: 14px;
+        border-radius: 2px;
+        background: var(--brand);
+      }
 
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      margin-top: 4px;
-      font-size: 0.875rem;
-      color: #666;
-      line-height: 1.625;
-    }
+      .section {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        text-align: justify;
+      }
 
-    .list-item {
-      padding-left: 0;
-    }
+      .clause {
+        display: block;
+        margin-top: 8px;
+      }
 
-    footer {
-      text-align: center;
-      padding: 32px 16px;
-      font-size: 0.75rem;
-      color: #999;
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <span class="header-title">用户协议</span>
-  </div>
+      .clause:first-child {
+        margin-top: 0;
+      }
 
-  <div class="container">
-    <div class="content">
-      <h1 class="title">随便买用户协议</h1>
-      <span class="meta">更新日期：2026 年 7 月 28 日</span>
-      <span class="meta">生效日期：2026 年 7 月 28 日</span>
+      .bullet {
+        display: block;
+        position: relative;
+        margin-top: 6px;
+        padding-left: 18px;
+      }
+
+      .bullet::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 0.72em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--brand);
+        opacity: 0.75;
+      }
+
+      .sub {
+        display: block;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-title);
+      }
+
+      strong {
+        font-weight: 600;
+        color: var(--text-title);
+      }
+
+      a.mail {
+        color: var(--brand);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      a.mail:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== 页脚 ===== */
+      footer {
+        max-width: 720px;
+        margin: 40px auto 0;
+        padding: 20px 16px calc(32px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--text-tertiary);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      footer a {
+        color: var(--text-secondary);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--brand);
+      }
+
+      @media (max-width: 480px) {
+        .doc-title {
+          font-size: 20px;
+        }
+        .container {
+          padding: 20px 16px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1 class="doc-title">随便买用户协议</h1>
+      <div class="doc-meta">
+        <span>更新日期：2026 年 7 月 28 日</span>
+        <span>生效日期：2026 年 7 月 28 日</span>
+      </div>
 
       <!-- 引言 -->
-      <h2 class="section-title">引言</h2>
-      <p class="section-text">
-        欢迎使用随便买（以下简称"本应用"或"我们"）。本用户协议（以下简称"本协议"）是您（以下简称"用户"或"您"）与随便买之间关于使用本应用服务的法律协议。请您仔细阅读本协议的全部内容。您通过注册、登录或使用本应用，即表示您已阅读、理解并同意接受本协议的全部条款。
+      <h2>引言</h2>
+      <p class="lead">
+        欢迎使用随便买（以下简称“本应用”或“我们”）。本用户协议（以下简称“本协议”）是您（以下简称“用户”或“您”）与随便买之间关于使用本应用服务的法律协议。请您仔细阅读本协议的全部内容。您通过注册、登录或使用本应用，即表示您已阅读、理解并同意接受本协议的全部条款。
       </p>
 
       <!-- 一、服务说明 -->
-      <h2 class="section-title">一、服务说明</h2>
-      <p class="section-text">
-        随便买是一款虚拟购物模拟应用，提供模拟购物、签到赚取虚拟货币、步数兑换虚拟货币、指尖印钞机小游戏等功能。应用内的虚拟货币和商品均为模拟娱乐用途，不具有真实货币价值，不可兑换法定货币或实物商品。
-      </p>
+      <h2>一、服务说明</h2>
+      <div class="section">
+        随便买是一款虚拟购物模拟应用，提供模拟购物、签到赚取虚拟货币、指尖印钞机小游戏等功能。应用内的虚拟货币和商品均为模拟娱乐用途，不具有真实货币价值，不可兑换法定货币或实物商品。
+      </div>
 
       <!-- 二、账号注册与使用 -->
-      <h2 class="section-title">二、账号注册与使用</h2>
-      <div class="list">
-        <div class="list-item">2.1 您可以通过电子邮箱注册或 Google 账号登录使用本应用。您应提供真实、准确的注册信息。</div>
-        <div class="list-item">2.2 您的账号仅限于您本人使用，不得出借、转让或共用。您应对账号下的所有行为负责。</div>
-        <div class="list-item">2.3 我们有权在发现异常登录或违规行为时，暂停或终止您的账号使用权限。</div>
-        <div class="list-item">2.4 您可随时在设置中选择注销账号，注销后您的所有数据将被删除且不可恢复。</div>
+      <h2>二、账号注册与使用</h2>
+      <div class="section">
+        <span class="clause"
+          >2.1 您可以通过电子邮箱注册或 Google 账号登录使用本应用。您应提供真实、准确的注册信息。</span
+        >
+        <span class="clause">2.2 您的账号仅限于您本人使用，不得出借、转让或共用。您应对账号下的所有行为负责。</span>
+        <span class="clause">2.3 我们有权在发现异常登录或违规行为时，暂停或终止您的账号使用权限。</span>
+        <span class="clause">2.4 您可随时在设置中选择注销账号，注销后您的所有数据将被删除且不可恢复。</span>
       </div>
 
       <!-- 三、用户行为规范 -->
-      <h2 class="section-title">三、用户行为规范</h2>
-      <div class="list">
-        <div class="list-item">3.1 您承诺在使用本应用时遵守中华人民共和国法律法规，不得利用本应用从事违法违规活动，包括但不限于：</div>
-        <div class="list-item">• 发布或传播违法、淫秽、暴力、骚扰、侵权或其他不良信息。</div>
-        <div class="list-item">• 利用技术手段进行刷分、作弊、破解、反向工程等干扰正常服务运行的行为。</div>
-        <div class="list-item">• 盗用他人账号、冒充他人身份。</div>
-        <div class="list-item">• 侵害他人知识产权、隐私权或其他合法权益。</div>
-        <div class="list-item">3.2 如发现上述违规行为，我们有权采取警告、限制功能、暂停或永久封禁账号等措施，并保留追究法律责任的权利。</div>
-        <div class="list-item">3.3 您应妥善保管账号密码，因账号保管不善造成的损失由您自行承担。</div>
+      <h2>三、用户行为规范</h2>
+      <div class="section">
+        <span class="clause"
+          >3.1 您承诺在使用本应用时遵守中华人民共和国法律法规，不得利用本应用从事违法违规活动，包括但不限于：</span
+        >
+        <span class="bullet">发布或传播违法、淫秽、暴力、骚扰、侵权或其他不良信息。</span>
+        <span class="bullet">利用技术手段进行刷分、作弊、破解、反向工程等干扰正常服务运行的行为。</span>
+        <span class="bullet">盗用他人账号、冒充他人身份。</span>
+        <span class="bullet">侵害他人知识产权、隐私权或其他合法权益。</span>
+        <span class="clause"
+          >3.2
+          如发现上述违规行为，我们有权采取警告、限制功能、暂停或永久封禁账号等措施，并保留追究法律责任的权利。</span
+        >
+        <span class="clause">3.3 您应妥善保管账号密码，因账号保管不善造成的损失由您自行承担。</span>
       </div>
 
       <!-- 四、虚拟资产说明 -->
-      <h2 class="section-title">四、虚拟资产说明</h2>
-      <div class="list">
-        <div class="list-item">4.1 本应用内的"虚拟余额"、"虚拟货币"、"徽章"、"成就"等均为模拟娱乐数据，不具有真实货币价值。</div>
-        <div class="list-item">4.2 虚拟资产的数据归本应用所有，我们有权根据运营需求调整虚拟资产的获取和使用规则。</div>
-        <div class="list-item">4.3 禁止通过非正常途径获取虚拟资产，一经发现将予以清零或封号处理。</div>
+      <h2>四、虚拟资产说明</h2>
+      <div class="section">
+        <span class="clause"
+          >4.1 本应用内的“虚拟余额”、“虚拟货币”、“徽章”、“成就”等均为模拟娱乐数据，不具有真实货币价值。</span
+        >
+        <span class="clause">4.2 虚拟资产的数据归本应用所有，我们有权根据运营需求调整虚拟资产的获取和使用规则。</span>
+        <span class="clause">4.3 禁止通过非正常途径获取虚拟资产，一经发现将予以清零或封号处理。</span>
       </div>
 
       <!-- 五、知识产权 -->
-      <h2 class="section-title">五、知识产权</h2>
-      <div class="list">
-        <div class="list-item">5.1 本应用的所有内容，包括但不限于文字、图片、图标、界面设计、代码、数据等，其知识产权归本应用或其权利方所有。</div>
-        <div class="list-item">5.2 未经我们书面许可，您不得复制、修改、传播、销售或以其他方式使用本应用的任何内容。</div>
-        <div class="list-item">5.3 您在使用本应用过程中上传的头像等内容，您保留所有权，同时授予我们在本应用范围内展示和使用的权利。</div>
+      <h2>五、知识产权</h2>
+      <div class="section">
+        <span class="clause"
+          >5.1
+          本应用的所有内容，包括但不限于文字、图片、图标、界面设计、代码、数据等，其知识产权归本应用或其权利方所有。</span
+        >
+        <span class="clause">5.2 未经我们书面许可，您不得复制、修改、传播、销售或以其他方式使用本应用的任何内容。</span>
+        <span class="clause"
+          >5.3 您在使用本应用过程中上传的头像等内容，您保留所有权，同时授予我们在本应用范围内展示和使用的权利。</span
+        >
       </div>
 
       <!-- 六、免责声明 -->
-      <h2 class="section-title">六、免责声明</h2>
-      <div class="list">
-        <div class="list-item">6.1 本应用按"现状"提供，我们不对服务的准确性、可靠性、完整性作任何明示或默示的保证。</div>
-        <div class="list-item">6.2 因不可抗力（自然灾害、战争、政策变化等）、网络故障、系统维护等非我方可控因素导致的服务中断，我们不承担责任。</div>
-        <div class="list-item">6.3 因您自身设备问题、操作不当或违反本协议导致的任何损失，由您自行承担。</div>
-        <div class="list-item">6.4 应用内的虚拟购物和资产都是模拟性的，我们不对任何因使用本应用产生的心理预期落差承担责任。</div>
+      <h2>六、免责声明</h2>
+      <div class="section">
+        <span class="clause">6.1 本应用按“现状”提供，我们不对服务的准确性、可靠性、完整性作任何明示或默示的保证。</span>
+        <span class="clause"
+          >6.2
+          因不可抗力（自然灾害、战争、政策变化等）、网络故障、系统维护等非我方可控因素导致的服务中断，我们不承担责任。</span
+        >
+        <span class="clause">6.3 因您自身设备问题、操作不当或违反本协议导致的任何损失，由您自行承担。</span>
+        <span class="clause"
+          >6.4 应用内的虚拟购物和资产都是模拟性的，我们不对任何因使用本应用产生的心理预期落差承担责任。</span
+        >
       </div>
 
       <!-- 七、服务变更与终止 -->
-      <h2 class="section-title">七、服务变更与终止</h2>
-      <div class="list">
-        <div class="list-item">7.1 我们保留随时修改、暂停或终止全部或部分服务的权利，将尽可能提前通知您。</div>
-        <div class="list-item">7.2 如您违反本协议，我们有权终止向您提供服务，且无需事先通知。</div>
-        <div class="list-item">7.3 协议终止后，您使用本服务的权利立即终止，但本协议中的知识产权、免责声明等条款继续有效。</div>
+      <h2>七、服务变更与终止</h2>
+      <div class="section">
+        <span class="clause">7.1 我们保留随时修改、暂停或终止全部或部分服务的权利，将尽可能提前通知您。</span>
+        <span class="clause">7.2 如您违反本协议，我们有权终止向您提供服务，且无需事先通知。</span>
+        <span class="clause"
+          >7.3 协议终止后，您使用本服务的权利立即终止，但本协议中的知识产权、免责声明等条款继续有效。</span
+        >
       </div>
 
       <!-- 八、协议修改 -->
-      <h2 class="section-title">八、协议修改</h2>
-      <p class="section-text">
+      <h2>八、协议修改</h2>
+      <div class="section">
         我们有权根据需要修改本协议。修改后的协议将在应用内公布。重大变更将通过弹窗或其他显著方式通知。若您在修改后继续使用本应用，视为您接受修改后的协议。如不同意修改，您应停止使用本应用。
-      </p>
+      </div>
 
       <!-- 九、法律适用与争议解决 -->
-      <h2 class="section-title">九、法律适用与争议解决</h2>
-      <div class="list">
-        <div class="list-item">9.1 本协议的订立、执行和解释均适用中华人民共和国法律。</div>
-        <div class="list-item">9.2 因本协议引起的或与之相关的争议，双方应友好协商解决；协商不成的，任何一方均可向我们有管辖权的人民法院提起诉讼。</div>
+      <h2>九、法律适用与争议解决</h2>
+      <div class="section">
+        <span class="clause"
+          >9.1 本协议的订立、执行和解释，在符合您所在国家/地区强制性法律规定的前提下，适用中华人民共和国法律。</span
+        >
+        <span class="clause"
+          >9.2
+          因本协议引起的或与之相关的争议，双方应友好协商解决；协商不成的，任何一方均可根据您所在国家/地区的强制性法律规定，向有管辖权的法院提起诉讼。</span
+        >
+        <span class="clause">9.3 如果您所在国家/地区对消费者权益、数据保护等有强制性规定的，以该强制性规定为准。</span>
       </div>
 
       <!-- 十、联系我们 -->
-      <h2 class="section-title">十、联系我们</h2>
-      <p class="section-text">
-        如您对本协议有任何疑问或建议，请在应用内"设置 - 关于"页面提交反馈或发送邮件至我们的官方邮箱。
-      </p>
-    </div>
-  </div>
+      <h2>十、联系我们</h2>
+      <div class="section">
+        如您对本协议有任何疑问或建议，请在应用内“设置 - 关于”页面提交反馈或发送邮件至
+        <a class="mail" href="mailto:freebuy-code@foxmail.com">freebuy-code@foxmail.com</a>。
+      </div>
+    </main>
 
-  <footer>
-    © 2026 随便买 FreeBuy. All rights reserved.
-  </footer>
-
-
-</body></html>
+    <footer>
+      <span>© 2026 随便买 FreeBuy</span>
+      <a href="./privacy.html">隐私政策</a>
+    </footer>
+  </body>
+</html>
