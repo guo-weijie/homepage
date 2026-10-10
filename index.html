@@ -1,25 +1,52 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="0dB" />
     <meta
       name="description"
-      content="0dB 个人导航，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买、古籍导航等常用服务入口。"
+      content="0dB 个人导航站，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买、古籍导航（CTEXT）等常用服务入口，一处直达。"
     />
-    <meta name="keywords" content="0dB, 导航页, 博客, 记账系统, SG-UI, 开发者工具, Web Win11, 随便买, 古籍导航, CTEXT" />
+    <meta name="keywords" content="0dB, 导航页, 个人导航, 博客, 记账系统, SG-UI, 开发者工具, Web Win11, 随便买, 古籍导航, CTEXT, 中国哲学书电子化计划" />
     <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- 规范链接 -->
+    <link rel="canonical" href="https://keep-silent.com/" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="0dB" />
-    <meta property="og:description" content="0dB 个人导航页面，汇集博客、组件库、工具、购物等常用服务入口" />
-    <meta property="og:url" content="https://keep-silent.com" />
+    <meta property="og:site_name" content="0dB" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="0dB 个人导航" />
+    <meta property="og:description" content="0dB 个人导航站，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买、古籍导航等常用服务入口。" />
+    <meta property="og:url" content="https://keep-silent.com/" />
     <meta property="og:image" content="https://keep-silent.com/og-image.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="0dB" />
-    <meta name="twitter:description" content="0dB 个人导航页面，汇集博客、组件库、工具、购物等常用服务入口" />
-    <title>0dB</title>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="0dB 个人导航" />
+    <meta name="twitter:description" content="0dB 个人导航站，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买、古籍导航等常用服务入口。" />
+    <meta name="twitter:image" content="https://keep-silent.com/og-image.png" />
+
+    <title>0dB 个人导航 | 博客·工具·古籍导航等常用服务入口</title>
+
+    <!-- 结构化数据 (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "0dB",
+        "url": "https://keep-silent.com/",
+        "description": "0dB 个人导航站，汇集博客、记账系统、SG-UI 组件库、开发者工具箱、Web Win11、随便买、古籍导航等常用服务入口。",
+        "inLanguage": "zh-CN"
+      }
+    </script>
 
     <!-- CDN 预连接 -->
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -362,7 +389,7 @@
         <h1>0dB</h1>
       </header>
 
-      <main class="nav-grid">
+      <nav class="nav-grid" aria-label="常用服务导航">
         <a
           href="https://blog.keep-silent.com"
           target="_blank"
@@ -477,7 +504,7 @@
           <h2 class="card-title">古籍导航</h2>
           <p class="card-desc">中国哲学书电子化计划，按朝代与四部检索古籍</p>
         </a>
-      </main>
+      </nav>
     </div>
 
     <script src="./js/particles.min.js"></script>
